@@ -1,60 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Access</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .container {
-            text-align: center;
-        }
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 6px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Access</title>
 </head>
 <body>
-    <div class="container">
-        <h2></h2>
-        <div class="loader"></div>
-    </div>
-
-    <script>
-        // Automatically run when page loads
-        window.onload = function() {
-            fetch('generate.php')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        window.location.href = 'redirect.php?id=' + data.token;
-                    } else {
-                        document.querySelector('.container').innerHTML = "<h2>Error generating link.<br>Please refresh the page.</h2>";
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.querySelector('.container').innerHTML = "<h2>Server error.<br>Please try again later.</h2>";
-                });
-        };
-    </script>
+  <script>
+    // Immediately fetch and redirect
+    fetch('generate.php')
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          window.location.href = 'redirect.php?id=' + data.token;
+        } else {
+          document.body.innerHTML = 'Error generating link. Please refresh.';
+        }
+      })
+      .catch(() => {
+        document.body.innerHTML = 'Error connecting to server.';
+      });
+  </script>
 </body>
 </html>
