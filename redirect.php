@@ -1,7 +1,7 @@
 <?php
 // redirect.php - Validates token and displays content in iframe
 $dbFile = 'tokens.json';
-$targetUrl = 'https://crichd-iframe-plr.blogspot.com/p/demo.html?m=1';
+$targetUrl = 'https://bindaaslinks.com/qwwym';
 
 // Get token from URL
 $token = isset($_GET['id']) ? $_GET['id'] : '';
@@ -86,4 +86,5 @@ file_put_contents($dbFile, json_encode($tokens));
         });
     </script>
 </body>
+
 </html>
