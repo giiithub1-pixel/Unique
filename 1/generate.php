@@ -3,7 +3,7 @@
 header('Content-Type: application/json');
 
 // Database configuration
-$dbFile = '1/tokens.json';
+$dbFile = 'tokens.json';
 
 // Generate random token
 function generateToken($length = 32) {
