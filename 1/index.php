@@ -111,7 +111,7 @@
   <script>
     // Secure Access System
     function generateLink() {
-      fetch('generate.php')
+      fetch('1/generate.php')
         .then(response => response.json())
         .then(data => {
           if (data.success) {
