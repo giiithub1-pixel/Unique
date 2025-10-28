@@ -1,6 +1,6 @@
 <?php
 // cleanup.php - Clean tokens older than 5 hours
-$dbFile = '1/tokens.json';
+$dbFile = 'tokens.json';
 
 if (file_exists($dbFile)) {
     $content = file_get_contents($dbFile);
