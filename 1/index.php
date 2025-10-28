@@ -111,11 +111,11 @@
   <script>
     // Secure Access System
     function generateLink() {
-      fetch('generate.php')
+      fetch('/generate.php')
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            window.location.href = 'redirect.php?id=' + data.token;
+            window.location.href = '/redirect.php?id=' + data.token;
           } else {
             alert('Error generating link. Please try again.');
           }
