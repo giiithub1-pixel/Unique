@@ -1,7 +1,7 @@
 <?php
 // redirect.php - Validates token and displays content in iframe
 $dbFile = 'tokens.json';
-$targetUrl = 'https://soplay.pro/embed2.php?id=willow';
+$targetUrl = 'https://crichd-plr.blogspot.com/?url=https://soplay.pro/embed2.php?id%3Dwillow&m=1';
 
 // Get token from URL
 $token = isset($_GET['id']) ? $_GET['id'] : '';
@@ -88,4 +88,5 @@ file_put_contents($dbFile, json_encode($tokens));
 </body>
 
 </html>
+
 
