@@ -115,7 +115,7 @@
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            window.location.href = '1/redirect.php?id=' + data.token;
+            window.location.href = 'redirect.php?id=' + data.token;
           } else {
             alert('Error generating link. Please try again.');
           }
