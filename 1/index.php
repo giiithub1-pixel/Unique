@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/app/">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Secure Access Live Card</title>
@@ -111,11 +112,11 @@
   <script>
     // Secure Access System
     function generateLink() {
-      fetch('/generate.php')
+      fetch('generate.php')
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            window.location.href = '/redirect.php?id=' + data.token;
+            window.location.href = 'redirect.php?id=' + data.token;
           } else {
             alert('Error generating link. Please try again.');
           }
