@@ -1,6 +1,6 @@
 <?php
 // redirect.php - Validates token and displays content (multi-use for 5 hours)
-$dbFile = 'tokens.json';
+$dbFile = '1/tokens.json';
 $targetUrl = 'https://crichd-iframe-plr.blogspot.com/p/demo.html?m=1';
 $homeUrl = 'https://asl-sports-1.blogspot.com/?m=1';
 
